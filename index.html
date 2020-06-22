@@ -6,5 +6,12 @@
 </head>
 <body>
 <b>Here you go...</b>
+<p>Loading message from the API: <b id="name">...</b></p>
+<script>
+    (async function() {
+        let { text } = await( await fetch(`/api/getmessage`)).json();
+        document.querySelector('#name').textContent = text;
+    }())
+</script>
 </body>
 </html>
