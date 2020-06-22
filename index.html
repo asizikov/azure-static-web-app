@@ -6,11 +6,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<b>Here you go...</b>
+<h1>This is a static web app</h1>
 <p>Loading message from the API: <b id="name">...</b></p>
 <script>
     (async function() {
-        let { text } = await( await fetch(`/api/getmessage`)).json();
+        let { text } = await( await fetch(`/api/getmessage?name=name`)).json();
         document.querySelector('#name').textContent = text;
     }())
 </script>
